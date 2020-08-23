@@ -1,0 +1,33 @@
+.week {
+  margin: 2rem 0;
+  h2 {
+    margin-bottom: 0.6rem;
+    font-size: 1.6rem;
+  }
+
+  &:first-of-type {
+    hr {
+      display: none;
+    }
+  }
+
+  hr {
+    background: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      #31366d,
+      rgba(255, 0, 0, 0)
+    );
+    height: 1px;
+    border: none;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.days {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-auto-columns: 1fr;
+}
