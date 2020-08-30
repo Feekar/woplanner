@@ -1,3 +1,2 @@
-- link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
 - Set current
--
+- Share workout, make a json link ?

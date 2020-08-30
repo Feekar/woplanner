@@ -1,0 +1,26 @@
+.overrides {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  & * {
+    font-family: Lato, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 18px;
+  }
+
+  input {
+    background: var(--input-background);
+    border: none;
+    border-radius: 10rem;
+    padding-left: 1.3rem;
+    color: var(--color-white);
+
+    &::placeholder {
+      opacity: 0.5;
+      color: var(--font-color-blue);
+    }
+  }
+}

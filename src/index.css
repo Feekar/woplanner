@@ -1,13 +1,14 @@
 body {
   margin: 1rem;
-  font-family: Jost, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: Lato, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
-  background: var(--background-color);
+  font-size: 18px;
+  background: #0c122b;
   color: var(--font-color-white);
+  min-height: 100vh;
 }
 
 code {
@@ -26,10 +27,12 @@ h6 {
 }
 
 :root {
-  --background-color: #111f48;
+  --background-color: #2b3566;
   --background-color-light: #132352;
-  --border-color: #202f72;
-  --font-color-blue: #597dff;
+  --border-color: #3a457b;
+  --font-color-blue: #7c89c5;
   --font-color-white: #e6e8ff;
-  --gradient: linear-gradient(to top, #223776, #3f3999);
+  --color-green: #46d5ac;
+  --gradient: linear-gradient(to top, #0143d9, #0491a8);
+  --input-background: #101428;
 }
