@@ -2,34 +2,3 @@
   min-height: 100%;
   padding: 1rem;
 }
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 1rem 0;
-  background: none;
-  border: none;
-  font-size: 18px;
-  font-family: inherit;
-  color: var(--color-green);
-  cursor: pointer;
-  height: 42px;
-  box-sizing: content-box;
-
-  img {
-    height: 1.3rem;
-    margin-right: 0.3rem;
-    margin-bottom: 0.2rem;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}

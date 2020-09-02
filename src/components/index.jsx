@@ -4,3 +4,5 @@ export { default as Week } from "./Week";
 export { default as Day } from "./Day";
 export { default as Exercises } from "./Exercises";
 export { default as Dropdown } from "./Dropdown";
+export { default as UserExercises } from "./UserExercises";
+export { default as ExercisePicker } from "./ExercisePicker";
