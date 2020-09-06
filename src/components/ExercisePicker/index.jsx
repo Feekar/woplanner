@@ -4,7 +4,7 @@ import ExercisesContext from "../../Context";
 import { Dropdown } from "../";
 import styles from "./styles.module.scss";
 
-const ExercisePicker = () => {
+const ExercisePicker = ({ addExercise }) => {
   const [showPicker, setShowPicker] = useState(false);
 
   const allExercises = useContext(ExercisesContext);
@@ -22,8 +22,10 @@ const ExercisePicker = () => {
     return newExercises;
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (value) => {
+    const type = allExercises.find((e) => e.name === value).type;
     //  generate an id on  client, add exercise to this day in state, push to firebase
+    addExercise(value, type);
     setShowPicker(false);
   };
 
