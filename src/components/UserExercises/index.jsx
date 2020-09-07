@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import { UserExercise } from "../";
 
-const UserExercises = ({ exercises }) => {
+const UserExercises = ({ exercises, onDelete, onAddNotes }) => {
   return (
     <ul className={styles.container}>
       {exercises.map((exercise, index) => {
         return (
-          <li className={styles.row} key={`${exercise.name}-${index}`}>
-            {exercise.name}
-          </li>
+          <UserExercise
+            exercise={exercise}
+            key={`${exercise.name}-${index}`}
+            onDelete={onDelete}
+            onAddNotes={onAddNotes}
+          />
         );
       })}
     </ul>

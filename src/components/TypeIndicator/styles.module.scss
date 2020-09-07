@@ -1,0 +1,25 @@
+.typeIndicator {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 99rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.strength {
+  background: #ff4d9f;
+}
+
+.flexibility {
+  background: #4dc6ff;
+}
+
+.cardio {
+  background: #ffe94d;
+}
+
+.sport {
+  background: #44d58b;
+}
