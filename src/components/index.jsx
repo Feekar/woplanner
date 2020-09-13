@@ -8,4 +8,4 @@ export { default as UserExercise } from "./UserExercise";
 export { default as UserExercises } from "./UserExercises";
 export { default as ExercisePicker } from "./ExercisePicker";
 export { default as TypeIndicator } from "./TypeIndicator";
-export { default as NoteEditor } from "./NoteEditor";
+export { default as Note } from "./Note";

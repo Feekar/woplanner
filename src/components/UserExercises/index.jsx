@@ -9,7 +9,7 @@ const UserExercises = ({ exercises, onDelete, onAddNotes }) => {
         return (
           <UserExercise
             exercise={exercise}
-            key={`${exercise.name}-${index}`}
+            key={`${exercise.name}${index}`}
             onDelete={onDelete}
             onAddNotes={onAddNotes}
           />

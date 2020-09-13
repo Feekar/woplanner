@@ -1,0 +1,27 @@
+.editingContainer {
+  display: flex;
+  input {
+    flex: 1;
+    background: var(--input-background);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    border-radius: 99rem 0 0 99rem;
+    border: 1px solid transparent;
+
+    &:focus {
+      border: 1px solid #7b8ad4;
+      outline: none;
+    }
+
+    &::placeholder {
+      opacity: 0.5;
+      color: var(--font-color-blue);
+    }
+  }
+
+  button:last-of-type {
+    border-radius: 0 99rem 99rem 0;
+  }
+}

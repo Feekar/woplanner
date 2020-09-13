@@ -8,7 +8,6 @@ import strength from "../../content/images/strength.svg";
 import styles from "./styles.module.scss";
 
 const TypeIndicator = ({ type }) => {
-  console.log(type);
   const getTypeIcon = (type) => {
     switch (type) {
       case "strength":

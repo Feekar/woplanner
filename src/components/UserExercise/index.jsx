@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { TypeIndicator, NoteEditor } from "../";
+import { TypeIndicator, Note } from "../";
 import trashIcon from "../../content/images/trash.svg";
 import addNoteIcon from "../../content/images/add_note.svg";
 import styles from "./styles.module.scss";
 
-const UserExercise = ({ exercise, onDelete, onAddNotes, key }) => {
-  const [showNotesEditor, setShowNotesEditor] = useState(false);
+const UserExercise = ({ exercise, onDelete, onAddNotes }) => {
+  const [editingNote, setEditingNote] = useState(false);
   const addNotes = () => {
-    setShowNotesEditor(true);
+    setEditingNote(!editingNote);
   };
 
   return (
-    <li className={styles.row} key={key}>
+    <li className={styles.row}>
       <div className={styles.top}>
         <div className={styles.left}>
           <TypeIndicator type={exercise.type} />
@@ -28,7 +28,7 @@ const UserExercise = ({ exercise, onDelete, onAddNotes, key }) => {
           ></button>
         </div>
       </div>
-      {showNotesEditor && <NoteEditor />}
+      <Note editing={editingNote} />
     </li>
   );
 };
