@@ -10,6 +10,10 @@ const UserExercise = ({ exercise, onDelete, onAddNotes }) => {
     setEditingNote(!editingNote);
   };
 
+  const onCancelNote = () => {
+    setEditingNote(false);
+  };
+
   return (
     <li className={styles.row}>
       <div className={styles.top}>
@@ -28,7 +32,7 @@ const UserExercise = ({ exercise, onDelete, onAddNotes }) => {
           ></button>
         </div>
       </div>
-      <Note editing={editingNote} />
+      <Note editing={editingNote} onCancelNote={onCancelNote} />
     </li>
   );
 };

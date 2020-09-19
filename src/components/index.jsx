@@ -9,3 +9,4 @@ export { default as UserExercises } from "./UserExercises";
 export { default as ExercisePicker } from "./ExercisePicker";
 export { default as TypeIndicator } from "./TypeIndicator";
 export { default as Note } from "./Note";
+export { default as Button } from "./Button";
