@@ -10,6 +10,10 @@
   &:focus {
     outline: 1px solid #7b8ad4;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .secondary {

@@ -16,9 +16,17 @@ const Exercises = () => {
       type,
       name: value,
       id: Date.now(),
-      notes: "",
+      note: "",
     };
     setUserExercises([...userExercises, exercise]);
+  };
+
+  const updateExercise = (exercise) => {
+    const newUserExercises = userExercises.map((e) =>
+      e.id === exercise.id ? exercise : e
+    );
+    setUserExercises(newUserExercises);
+    console.log(newUserExercises);
   };
 
   const onDelete = (id) => {
@@ -28,7 +36,11 @@ const Exercises = () => {
 
   return (
     <div className={styles.container}>
-      <UserExercises exercises={userExercises} onDelete={onDelete} />
+      <UserExercises
+        exercises={userExercises}
+        onDelete={onDelete}
+        updateExercise={updateExercise}
+      />
       <ExercisePicker addExercise={addExercise} />
     </div>
   );

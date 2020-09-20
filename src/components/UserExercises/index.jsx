@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { UserExercise } from "../";
 
-const UserExercises = ({ exercises, onDelete, onAddNotes }) => {
+const UserExercises = ({ exercises, onDelete, updateExercise }) => {
   return (
     <ul className={styles.container}>
       {exercises.map((exercise, index) => {
@@ -11,7 +11,7 @@ const UserExercises = ({ exercises, onDelete, onAddNotes }) => {
             exercise={exercise}
             key={`${exercise.name}${index}`}
             onDelete={onDelete}
-            onAddNotes={onAddNotes}
+            updateExercise={updateExercise}
           />
         );
       })}
