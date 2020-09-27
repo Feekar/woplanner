@@ -32,37 +32,8 @@ function App() {
       <ExercisesContext.Provider value={exercises}>
         <Weeks weeksRepeated={weeksRepeated} />
       </ExercisesContext.Provider>
-      cardio sport strength flexibility
     </div>
   );
 }
 
 export default App;
-
-//users: [
-//  id: "421421412f"
-//  name: "jonas",
-//  weeks: [
-//    weekNumber: 1,
-//    days: [
-//      id: "2312412hasfjkh24" //för att uppdatera mot ?
-//      name: "MONDAY",
-//      exercises: [
-//         exercise_id: "34214124"
-//         notes: "12kg"
-//      ],
-//      name: "TUESDAY",
-//      exercises: [],
-//    ]
-//  ]
-//]
-
-// function Week(weekNumber = "", days = []) {
-//   this.weekNumber = weekNumber;
-//   this.days = days;
-// }
-
-// function Day(name = "", exercises = []) {
-//   this.name = name;
-//   this.exercises = exercises;
-// }

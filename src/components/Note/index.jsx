@@ -30,14 +30,14 @@ const Note = ({ note, editing, onCancelNote, onUpdateNote }) => {
         value={newNoteText}
         placeholder={"Example: 3x10 30kg"}
         onChange={handleChange}
-        maxlength="500"
+        maxLength="500"
       />
       <Button text={"Cancel"} type={"secondary"} onClick={handleCancelClick} />
       <Button text={"OK"} type={"primary"} onClick={handleOkClick} />
     </div>
   ) : (
     <div>
-      <span clasName={styles.noteText}>{note}</span>
+      <span className={styles.noteText}>{note}</span>
     </div>
   );
 };

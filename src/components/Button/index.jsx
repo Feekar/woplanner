@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 
-const Button = ({ text, type = "primary", onClick }) => {
+const Button = ({ text, type = "primary", onClick, children }) => {
   return (
     <button
       className={`${styles.button} ${
@@ -9,6 +9,7 @@ const Button = ({ text, type = "primary", onClick }) => {
       }`}
       onClick={onClick}
     >
+      {children}
       {text}
     </button>
   );

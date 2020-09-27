@@ -1,0 +1,39 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+
+    img {
+      opacity: 0.8;
+      width: 1.4rem;
+      padding: 0.2rem;
+    }
+
+    &:nth-of-type(1) {
+      border-radius: 99rem 0 0 99rem;
+    }
+
+    &:nth-of-type(2) {
+      border-radius: 0 99rem 99rem 0;
+    }
+  }
+}
+
+.addWeek {
+  filter: brightness(0%);
+}
+
+.weeksRepeated {
+  font-size: 1.5em;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.weeksRepeatedText {
+  margin-left: 0.8rem;
+}
