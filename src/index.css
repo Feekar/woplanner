@@ -9,6 +9,7 @@ body {
   background: #0c122b;
   color: var(--font-color-white);
   min-height: 100vh;
+  margin: 0;
 }
 
 code {

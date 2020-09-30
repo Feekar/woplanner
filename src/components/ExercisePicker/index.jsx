@@ -24,7 +24,6 @@ const ExercisePicker = ({ addExercise }) => {
 
   const handleChange = (value) => {
     const type = allExercises.find((e) => e.name === value).type;
-    //  generate an id on  client, add exercise to this day in state, push to firebase
     addExercise(value, type);
     setShowPicker(false);
   };
@@ -37,7 +36,6 @@ const ExercisePicker = ({ addExercise }) => {
           name="exercises"
           placeholder="Pick an exercise"
           onChange={(e) => handleChange(e)}
-          // value={selectedExercise}
         />
       ) : (
         <button className={styles.button} onClick={() => setShowPicker(true)}>

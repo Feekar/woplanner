@@ -8,7 +8,7 @@ const Exercises = () => {
   const [userExercises, setUserExercises] = useState([]);
 
   useEffect(() => {
-    // any time userExercises are updated write to localstorage
+    console.log(userExercises);
   }, [userExercises]);
 
   const addExercise = (value, type) => {

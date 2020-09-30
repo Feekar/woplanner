@@ -3,7 +3,7 @@ import SelectSearch from "react-select-search";
 import "./dropdown.css";
 import styles from "./styles.module.scss";
 
-const Dropdown = ({ options, name, placeholder, onChange, value }) => {
+const Dropdown = ({ options, name, placeholder, onChange }) => {
   return (
     <div className={styles.overrides}>
       <SelectSearch
@@ -12,7 +12,6 @@ const Dropdown = ({ options, name, placeholder, onChange, value }) => {
         placeholder={placeholder}
         search={true}
         onChange={(e) => onChange(e)}
-        value={value}
       />
     </div>
   );

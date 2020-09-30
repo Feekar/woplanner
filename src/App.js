@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Toolbar, Weeks } from "./components";
+import { Toolbar, Week } from "./components";
 import { firebase } from "./firebase";
 import ExercisesContext from "./Context";
 
-import "./App.css";
+import styles from "./styles.module.scss";
 
 function App() {
-  const [weeksRepeated, setWeeksRepeated] = useState(1);
   const [exercises, setExercises] = useState([]);
+  const [weeks, setWeeks] = useState([]);
+
+  useEffect(() => {
+    const storedWeeks = localStorage.getItem("weeks");
+    if (storedWeeks) {
+      setWeeks(JSON.parse(storedWeeks));
+    } else {
+      setWeeks([{ something: "123" }]);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchExercises = async () => {
@@ -19,18 +28,35 @@ function App() {
     fetchExercises();
   }, []);
 
-  const handleUpdateWeeksRepeated = (weeks) => {
-    setWeeksRepeated(weeks);
+  useEffect(() => {
+    localStorage.setItem("weeks", JSON.stringify(weeks));
+  }, [weeks]);
+
+  const handleUpdateWeeks = (type) => {
+    const newWeeks = [...weeks];
+    if (type === "add") {
+      newWeeks.push({ something: "123" });
+    } else if (type === "remove") {
+      newWeeks.pop();
+    }
+
+    if (newWeeks.length > 16 || newWeeks.length < 1) {
+      return;
+    }
+
+    setWeeks(newWeeks);
   };
 
   return (
-    <div className="App">
-      <Toolbar
-        weeksRepeated={weeksRepeated}
-        updateWeeksRepeated={handleUpdateWeeksRepeated}
-      />
+    <div className={styles.App}>
+      <Toolbar weeksRepeated={weeks.length} updateWeeks={handleUpdateWeeks} />
       <ExercisesContext.Provider value={exercises}>
-        <Weeks weeksRepeated={weeksRepeated} />
+        <main className={styles.weeks}>
+          {weeks.map((week, index) => {
+            return <Week week={week} key={index} />;
+          })}
+        </main>
+        {/* <Weeks weeks={weeks} /> */}
       </ExercisesContext.Provider>
     </div>
   );
