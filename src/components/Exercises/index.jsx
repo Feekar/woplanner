@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { UserExercises } from "../";
 import { ExercisePicker } from "../";
 
 import styles from "./styles.module.scss";
 
-const Exercises = () => {
-  const [userExercises, setUserExercises] = useState([]);
+const Exercises = ({ updateUserExercises, userExercises, week, day }) => {
+  // const [userExercises, setUserExercises] = useState([]);
 
-  useEffect(() => {
-    console.log(userExercises);
-  }, [userExercises]);
+  // useEffect(() => {
+  //   console.log(userExercises);
+  // }, [userExercises]);
 
   const addExercise = (value, type) => {
     const exercise = {
@@ -18,26 +18,29 @@ const Exercises = () => {
       id: Date.now(),
       note: "",
     };
-    setUserExercises([...userExercises, exercise]);
+
+    const newExercises = [...userExercises];
+    newExercises.push(exercise);
+    updateUserExercises(newExercises, week, day);
   };
 
   const updateExercise = (exercise) => {
     const newUserExercises = userExercises.map((e) =>
       e.id === exercise.id ? exercise : e
     );
-    setUserExercises(newUserExercises);
+
+    // setUserExercises(newUserExercises);
   };
 
-  const onDelete = (id) => {
-    const newExercises = userExercises.filter((e) => e.id !== id);
-    setUserExercises(newExercises);
-  };
+  // const onDelete = (id) => {
+  //   const newExercises = userExercises.filter((e) => e.id !== id);
+  //   setUserExercises(newExercises);
+  // };
 
   return (
     <div className={styles.container}>
       <UserExercises
         exercises={userExercises}
-        onDelete={onDelete}
         updateExercise={updateExercise}
       />
       <ExercisePicker addExercise={addExercise} />

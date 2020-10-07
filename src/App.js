@@ -1,9 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { Toolbar, Week } from "./components";
+import { Toolbar, Week, Day } from "./components";
 import { firebase } from "./firebase";
 import ExercisesContext from "./Context";
 
 import styles from "./styles.module.scss";
+
+function WeekObj() {
+  this.days = [
+    {
+      name: "MONDAY",
+      exercises: [],
+    },
+    {
+      name: "TUESDAY",
+      exercises: [],
+    },
+    {
+      name: "WEDNESDAY",
+      exercises: [],
+    },
+    {
+      name: "THURSDAY",
+      exercises: [],
+    },
+    {
+      name: "FRIDAY",
+      exercises: [],
+    },
+    {
+      name: "SATURDAY",
+      exercises: [],
+    },
+    {
+      name: "SUNDAY",
+      exercises: [],
+    },
+  ];
+}
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -14,7 +47,7 @@ function App() {
     if (storedWeeks) {
       setWeeks(JSON.parse(storedWeeks));
     } else {
-      setWeeks([{ something: "123" }]);
+      setWeeks([new WeekObj()]);
     }
   }, []);
 
@@ -32,10 +65,10 @@ function App() {
     localStorage.setItem("weeks", JSON.stringify(weeks));
   }, [weeks]);
 
-  const handleUpdateWeeks = (type) => {
+  const handleAddRemoveWeeks = (type) => {
     const newWeeks = [...weeks];
     if (type === "add") {
-      newWeeks.push({ something: "123" });
+      newWeeks.push(new WeekObj());
     } else if (type === "remove") {
       newWeeks.pop();
     }
@@ -47,13 +80,42 @@ function App() {
     setWeeks(newWeeks);
   };
 
+  const handleUpdateUserExercises = (exercises, weekIndex, dayName) => {
+    const newWeeks = [...weeks];
+
+    const newDays = newWeeks[weekIndex].days.map((day) => {
+      if (day.name === dayName) {
+        day.exercises = exercises;
+      }
+
+      return day;
+    });
+
+    newWeeks[weekIndex].days = newDays;
+    setWeeks(newWeeks);
+  };
+
   return (
     <div className={styles.App}>
-      <Toolbar weeksRepeated={weeks.length} updateWeeks={handleUpdateWeeks} />
+      <Toolbar
+        weeksRepeated={weeks.length}
+        addRemoveWeeks={handleAddRemoveWeeks}
+      />
       <ExercisesContext.Provider value={exercises}>
         <main className={styles.weeks}>
           {weeks.map((week, index) => {
-            return <Week week={week} key={index} />;
+            return (
+              <Week week={week} weekNumber={index} key={index}>
+                {week.days.map((day, dayIndex) => (
+                  <Day
+                    updateUserExercises={handleUpdateUserExercises}
+                    day={day}
+                    week={index}
+                    key={index + day.name}
+                  />
+                ))}
+              </Week>
+            );
           })}
         </main>
         {/* <Weeks weeks={weeks} /> */}
