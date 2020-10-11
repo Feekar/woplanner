@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/woplanner/static/css/main.85af2206.chunk.css",
+    "main.js": "/woplanner/static/js/main.1c4c5b3f.chunk.js",
+    "main.js.map": "/woplanner/static/js/main.1c4c5b3f.chunk.js.map",
+    "runtime-main.js": "/woplanner/static/js/runtime-main.bb8b3fe6.js",
+    "runtime-main.js.map": "/woplanner/static/js/runtime-main.bb8b3fe6.js.map",
+    "static/js/2.a4c37f7d.chunk.js": "/woplanner/static/js/2.a4c37f7d.chunk.js",
+    "static/js/2.a4c37f7d.chunk.js.map": "/woplanner/static/js/2.a4c37f7d.chunk.js.map",
+    "index.html": "/woplanner/index.html",
+    "precache-manifest.449ff23bafac8d65e5c2ce6099dd8c8e.js": "/woplanner/precache-manifest.449ff23bafac8d65e5c2ce6099dd8c8e.js",
+    "service-worker.js": "/woplanner/service-worker.js",
+    "static/css/main.85af2206.chunk.css.map": "/woplanner/static/css/main.85af2206.chunk.css.map",
+    "static/js/2.a4c37f7d.chunk.js.LICENSE.txt": "/woplanner/static/js/2.a4c37f7d.chunk.js.LICENSE.txt",
+    "static/media/add_note.svg": "/woplanner/static/media/add_note.8c6b4405.svg",
+    "static/media/cardio.svg": "/woplanner/static/media/cardio.f1de5f66.svg",
+    "static/media/flexibility.svg": "/woplanner/static/media/flexibility.85de99cb.svg",
+    "static/media/minus.svg": "/woplanner/static/media/minus.9661ba0b.svg",
+    "static/media/plus.svg": "/woplanner/static/media/plus.80f0d9c3.svg",
+    "static/media/sport.svg": "/woplanner/static/media/sport.9a48fe3d.svg",
+    "static/media/strength.svg": "/woplanner/static/media/strength.9e3c11ef.svg",
+    "static/media/trash.svg": "/woplanner/static/media/trash.4fd28854.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb8b3fe6.js",
+    "static/js/2.a4c37f7d.chunk.js",
+    "static/css/main.85af2206.chunk.css",
+    "static/js/main.1c4c5b3f.chunk.js"
+  ]
+}
