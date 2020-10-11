@@ -8,7 +8,6 @@ const ExercisePicker = ({ addExercise }) => {
   const [showPicker, setShowPicker] = useState(false);
 
   const allExercises = useContext(ExercisesContext);
-  console.log(allExercises);
   const groupedAllExercises = allExercises.reduce((newExercises, exercise) => {
     const type = exercise.type.toLowerCase();
     const newExercise = {

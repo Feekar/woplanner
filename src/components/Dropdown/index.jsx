@@ -4,7 +4,6 @@ import "./dropdown.css";
 import styles from "./styles.module.scss";
 
 const Dropdown = ({ options, name, placeholder, onChange }) => {
-  console.log(options);
   return (
     <div className={styles.overrides}>
       <SelectSearch
