@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d6c9ec003ebcbb57d5d13395fcea5d7a",
+    "revision": "345f6d20a4aae199863c01b41660d427",
     "url": "/woplanner/index.html"
   },
   {
-    "revision": "5344224631cfc058e0e6",
+    "revision": "63e1f42cad50c96280de",
     "url": "/woplanner/static/css/main.85af2206.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/woplanner/static/js/2.a4c37f7d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5344224631cfc058e0e6",
-    "url": "/woplanner/static/js/main.1c4c5b3f.chunk.js"
+    "revision": "63e1f42cad50c96280de",
+    "url": "/woplanner/static/js/main.4693aef3.chunk.js"
   },
   {
     "revision": "3594fc8bb2e4812536d2",
