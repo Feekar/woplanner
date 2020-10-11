@@ -41,6 +41,8 @@ function WeekObj() {
 function App() {
   const [exercises, setExercises] = useState([]);
   const [weeks, setWeeks] = useState([]);
+  const maxWeeks = 16;
+  const minWeeks = 1;
 
   useEffect(() => {
     const storedWeeks = localStorage.getItem("weeks");
@@ -73,7 +75,7 @@ function App() {
       newWeeks.pop();
     }
 
-    if (newWeeks.length > 16 || newWeeks.length < 1) {
+    if (newWeeks.length > maxWeeks || newWeeks.length < minWeeks) {
       return;
     }
 
@@ -106,7 +108,7 @@ function App() {
           {weeks.map((week, index) => {
             return (
               <Week week={week} weekNumber={index} key={index}>
-                {week.days.map((day, dayIndex) => (
+                {week.days.map((day) => (
                   <Day
                     updateUserExercises={handleUpdateUserExercises}
                     day={day}
@@ -118,7 +120,6 @@ function App() {
             );
           })}
         </main>
-        {/* <Weeks weeks={weeks} /> */}
       </ExercisesContext.Provider>
     </div>
   );

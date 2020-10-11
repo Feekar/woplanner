@@ -5,12 +5,6 @@ import { ExercisePicker } from "../";
 import styles from "./styles.module.scss";
 
 const Exercises = ({ updateUserExercises, userExercises, week, day }) => {
-  // const [userExercises, setUserExercises] = useState([]);
-
-  // useEffect(() => {
-  //   console.log(userExercises);
-  // }, [userExercises]);
-
   const addExercise = (value, type) => {
     const exercise = {
       type,
@@ -29,19 +23,20 @@ const Exercises = ({ updateUserExercises, userExercises, week, day }) => {
       e.id === exercise.id ? exercise : e
     );
 
-    // setUserExercises(newUserExercises);
+    updateUserExercises(newUserExercises, week, day);
   };
 
-  // const onDelete = (id) => {
-  //   const newExercises = userExercises.filter((e) => e.id !== id);
-  //   setUserExercises(newExercises);
-  // };
+  const deleteExercise = (exercise) => {
+    const newExercises = userExercises.filter((e) => e.id !== exercise.id);
+    updateUserExercises(newExercises, week, day);
+  };
 
   return (
     <div className={styles.container}>
       <UserExercises
         exercises={userExercises}
         updateExercise={updateExercise}
+        deleteExercise={deleteExercise}
       />
       <ExercisePicker addExercise={addExercise} />
     </div>

@@ -5,26 +5,6 @@ import minus from "../../content/images/minus.svg";
 import styles from "./styles.module.scss";
 
 const Toolbar = ({ weeksRepeated, addRemoveWeeks }) => {
-  // const maxWeeks = 16;
-  // const minWeeks = 1;
-
-  // const handleClick = (type) => {
-  //   let newWeeksRepeated;
-  //   if (type === "add") {
-  //     newWeeksRepeated = weeksRepeated + 1;
-  //     if (newWeeksRepeated > maxWeeks) {
-  //       return;
-  //     }
-  //   } else {
-  //     newWeeksRepeated = weeksRepeated - 1;
-  //     if (newWeeksRepeated < minWeeks) {
-  //       return;
-  //     }
-  //   }
-
-  //   updateWeeksRepeated(newWeeksRepeated);
-  // };
-
   return (
     <div className={styles.toolbar}>
       <Button
@@ -44,7 +24,7 @@ const Toolbar = ({ weeksRepeated, addRemoveWeeks }) => {
         <img src={plus} alt="plus" className={styles.addWeek} />
       </Button>
       <span className={styles.weeksRepeatedText}>
-        week{weeksRepeated > 1 && "s"} repeated
+        week{weeksRepeated > 1 && "s"}
       </span>
     </div>
   );

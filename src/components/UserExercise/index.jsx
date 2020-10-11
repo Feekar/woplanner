@@ -4,7 +4,7 @@ import trashIcon from "../../content/images/trash.svg";
 import addNoteIcon from "../../content/images/add_note.svg";
 import styles from "./styles.module.scss";
 
-const UserExercise = ({ exercise, onDelete, updateExercise }) => {
+const UserExercise = ({ exercise, deleteExercise, updateExercise }) => {
   const [editingNote, setEditingNote] = useState(false);
   const addNotes = () => {
     setEditingNote(!editingNote);
@@ -29,13 +29,13 @@ const UserExercise = ({ exercise, onDelete, updateExercise }) => {
         <div className={styles.right}>
           <button
             style={{ backgroundImage: `url(${trashIcon})` }}
-            onClick={() => onDelete(exercise.id)}
+            onClick={() => deleteExercise(exercise)}
             title="Delete exercise"
           ></button>
           <button
             style={{ backgroundImage: `url(${addNoteIcon})` }}
             onClick={() => addNotes(exercise.id)}
-            title="Add a note"
+            title="Add/update a note"
           ></button>
         </div>
       </div>
